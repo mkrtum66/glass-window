@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { IMainNav } from './types';
+import { NavLink } from 'react-router-dom';
 
 const Bar = styled.nav`
   font-size: 18px;
-  background-image: linear-gradient(260deg, rgb(42, 244, 152, 255) 0%, #3498db 100%);
-  border: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
   @media (min-width: 768px) {
     display: flex;
@@ -29,7 +28,7 @@ export const NavLi = styled.li`
   text-align: center;
   margin: 15px auto;
 `;
-export const NavLink = styled.a`
+export const StyledNavLink = styled(NavLink)`
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -37,7 +36,7 @@ export const NavLink = styled.a`
     margin: 0px 10px;
   }
 `;
-export const Logo = styled(NavLink)`
+export const Logo = styled(StyledNavLink)`
   display: inline-block;
   font-size: 22px;
   margin-top: 10px;
@@ -56,6 +55,10 @@ export const Hamburger = styled.img`
   @media (min-width: 768px) {
     display: none;
   }
+`;
+
+export const HeaderWrapper = styled.div`
+  background-image: linear-gradient(260deg, rgb(42, 244, 152, 255) 0%, #3498db 100%);
 `;
 
 export default Bar;

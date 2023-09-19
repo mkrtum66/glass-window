@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import Bar, { Hamburger, Logo, MainNav, NavBarToggle, NavLi, NavLink } from './header.styled';
+import Bar, {
+  Hamburger,
+  HeaderWrapper,
+  Logo,
+  MainNav,
+  NavBarToggle,
+  NavLi,
+  StyledNavLink,
+} from './header.styled';
+import Container from '../../atoms/Conatianer';
 
 const Header = () => {
   const [displayNav, setDisplayNav] = useState(false);
@@ -9,20 +18,24 @@ const Header = () => {
   };
 
   return (
-    <Bar>
-      <NavBarToggle onClick={() => toggleNavBar()}>
-        <Hamburger />
-      </NavBarToggle>
-      <Logo href="#">logo</Logo>
-      <MainNav display={displayNav ? 'flex' : 'none'}>
-        <NavLi>
-          <NavLink href="#">Projects</NavLink>
-        </NavLi>
-        <NavLi>
-          <NavLink href="#">Contact Us</NavLink>
-        </NavLi>
-      </MainNav>
-    </Bar>
+    <HeaderWrapper>
+      <Container>
+        <Bar>
+          <NavBarToggle onClick={() => toggleNavBar()}>
+            <Hamburger />
+          </NavBarToggle>
+          <Logo to="/">logo</Logo>
+          <MainNav display={displayNav ? 'flex' : 'none'}>
+            <NavLi>
+              <StyledNavLink to="/projects">Projects</StyledNavLink>
+            </NavLi>
+            <NavLi>
+              <StyledNavLink to="/contact-us">Contact Us</StyledNavLink>
+            </NavLi>
+          </MainNav>
+        </Bar>
+      </Container>
+    </HeaderWrapper>
   );
 };
 
