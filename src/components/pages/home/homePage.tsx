@@ -3,7 +3,7 @@ import StyledHomePage from './homePage.styled';
 
 const HomePage = () => {
   return (
-    <StyledHomePage>
+    <StyledHomePage className={'pageWrapper'}>
       <h1>Home Page</h1>
     </StyledHomePage>
   );
